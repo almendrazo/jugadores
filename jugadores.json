@@ -19,5 +19,26 @@
     "Edad": 26,
     "Nacionalidad": "Argentina",
     "Posición": "Delantero / Mediapunta"
+  },
+  {
+    "Nombre": "Luka Modrić",
+    "Equipo actual": "Real Madrid C.F.",
+    "Edad": 40,
+    "Nacionalidad": "Croata",
+    "Posición": "Centrocampista"
+  },
+  {
+    "Nombre": "Michael Olise",
+    "Equipo actual": "F.C. Bayern Múnich",
+    "Edad": 24,
+    "Nacionalidad": "Francesa",
+    "Posición": "Delantero / Extremo derecho"
+  },
+  {
+    "Nombre": "Isco Alarcón",
+    "Equipo actual": "Real Betis Balompié",
+    "Edad": 34,
+    "Nacionalidad": "Española",
+    "Posición": "Centrocampista / Mediapunta"
   }
 ]
