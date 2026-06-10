@@ -1,0 +1,23 @@
+[
+  {
+    "Nombre": "Lamine Yamal",
+    "Equipo actual": "F.C. Barcelona",
+    "Edad": 18,
+    "Nacionalidad": "Española",
+    "Posición": "Delantero / Extremo derecho"
+  },
+  {
+    "Nombre": "Vinícius Júnior",
+    "Equipo actual": "Real Madrid C.F.",
+    "Edad": 25,
+    "Nacionalidad": "Brasileña",
+    "Posición": "Delantero / Extremo izquierdo"
+  },
+  {
+    "Nombre": "Julián Álvarez",
+    "Equipo actual": "Atlético de Madrid",
+    "Edad": 26,
+    "Nacionalidad": "Argentina",
+    "Posición": "Delantero / Mediapunta"
+  }
+]
