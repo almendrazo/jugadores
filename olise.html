@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Michael Olise</title>
+    <link rel="stylesheet" href="estilos.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #f5f5f5;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        h1 {
+            color: #333;
+            border-bottom: 3px solid #2196F3;
+            padding-bottom: 10px;
+        }
+
+        .jugador-info {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .info-row:last-child {
+            border-bottom: none;
+        }
+
+        .label {
+            font-weight: bold;
+            color: #2196F3;
+        }
+
+        .value {
+            color: #555;
+        }
+
+        .volver-btn {
+            display: inline-block;
+            background-color: #2196F3;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        .volver-btn:hover {
+            background-color: #1976D2;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <button class="volver-btn" onclick="window.location.href='index.html'">← Volver al índice</button>
+        
+        <h1 id="titulo"></h1>
+        
+        <div class="jugador-info" id="jugadorInfo"></div>
+    </div>
+
+    <script>
+        const nombreJugadorBuscado = "Michael Olise";
+
+        fetch('jugadores.json')
+            .then(response => response.json())
+            .then(jugadores => {
+                const jugador = jugadores.find(j => j.Nombre === nombreJugadorBuscado);
+                
+                if (jugador) {
+                    document.getElementById('titulo').textContent = jugador.Nombre;
+                    
+                    let html = '';
+                    html += '<div class="info-row"><span class="label">Nombre:</span><span class="value">' + jugador.Nombre + '</span></div>';
+                    html += '<div class="info-row"><span class="label">Equipo actual:</span><span class="value">' + jugador["Equipo actual"] + '</span></div>';
+                    html += '<div class="info-row"><span class="label">Edad:</span><span class="value">' + jugador.Edad + '</span></div>';
+                    html += '<div class="info-row"><span class="label">Nacionalidad:</span><span class="value">' + jugador.Nacionalidad + '</span></div>';
+                    html += '<div class="info-row"><span class="label">Posición:</span><span class="value">' + jugador.Posición + '</span></div>';
+                    
+                    document.getElementById('jugadorInfo').innerHTML = html;
+                } else {
+                    document.getElementById('jugadorInfo').innerHTML = '<p>No se encontró información del jugador.</p>';
+                }
+            })
+            .catch(error => {
+                console.error('Error al cargar el JSON:', error);
+                document.getElementById('jugadorInfo').innerHTML = '<p>Error al cargar los datos del jugador.</p>';
+            });
+    </script>
+</body>
+
+</html>
